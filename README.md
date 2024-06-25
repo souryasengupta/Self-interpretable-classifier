@@ -54,6 +54,12 @@ This repository contains the following components:
 - `matplotlib`
 - `jupyter`
 
+## Contact
+
+If you have any questions or feedback, feel free to reach out:
+
+- **Email**: souryas2@illinois.edu
+
 ## Citation
 
 If you use this code in your research, please cite the following paper:
@@ -72,13 +78,5 @@ If you use this code in your research, please cite the following paper:
   journal={arXiv preprint arXiv:2303.06876},
   year={2023}
 }
-## Contact
 
-If you have any questions or feedback, feel free to reach out:
-
-- **Email**: souryas2@illinois.edu
-
-## License
-
-This project is licensed under the MIT License. 
 
