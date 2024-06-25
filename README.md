@@ -54,6 +54,24 @@ This repository contains the following components:
 - `matplotlib`
 - `jupyter`
 
+## Citation
+
+If you use this code in your research, please cite the following paper:
+
+```bibtex
+@article{sengupta2024test,
+  title={A Test Statistic Estimation-based Approach for Establishing Self-interpretable CNN-based Binary Classifiers},
+  author={Sengupta, Sourya and Anastasio, Mark A},
+  journal={IEEE transactions on medical imaging},
+  year={2024},
+  publisher={IEEE}
+}
+@article{sengupta2023revisiting,
+  title={Revisiting model self-interpretability in a decision-theoretic way for binary medical image classification},
+  author={Sengupta, Sourya and Anastasio, Mark A},
+  journal={arXiv preprint arXiv:2303.06876},
+  year={2023}
+}
 ## Contact
 
 If you have any questions or feedback, feel free to reach out:
