@@ -17,13 +17,37 @@ This repository contains the following components:
 3. **Test the Performance and Visualization**: Jupyter Notebook (`test-relu-skip.ipynb`): Provides a test bed for evaluating and visualizing.
 
 
-Important Libraries
-keras==2.2.4
-tensorflow==1.15
-numpy
-matplotlib
-jupyter
-Contact:
+### Running the Python Scripts
+
+1. **Classification Task**:
+   - Execute the following command to run the classification neural network script:
+
+    ```sh
+    python classification_relu.py
+    ```
+
+2. **Regression Task with Skip Connections**:
+   - Execute the following command to run the regression neural network with skip connections script:
+
+    ```sh
+    python estimation_relu_skip.py
+    ```
+    
+## Important Libraries
+
+- `keras==2.2.4`
+- `tensorflow==1.15`
+- `numpy`
+- `matplotlib`
+- `jupyter`
+
+## Contact
+
 If you have any questions or feedback, feel free to reach out:
 
-Email: souryas2@illinois.edu
+- **Email**: souryas2@illinois.edu
+
+## License
+
+This project is licensed under the MIT License. 
+
