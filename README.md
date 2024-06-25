@@ -1,6 +1,6 @@
 # A Test Statistic Estimation-Based Approach for Establishing Self-Interpretable CNN-Based Binary Classifiers
 
-This repository contains the codebase for the paper **"A Test Statistic Estimation-Based Approach for Establishing Self-Interpretable CNN-Based Binary Classifiers"** (Sengupta and Anastasio, IEEE TMI 2024).
+This repository contains the codebase for the paper **"[A Test Statistic Estimation-Based Approach for Establishing Self-Interpretable CNN-Based Binary Classifiers](https://ieeexplore.ieee.org/abstract/document/10378976/)**" (Sengupta and Anastasio, IEEE TMI 2024).
 
 ## Abstract
 
