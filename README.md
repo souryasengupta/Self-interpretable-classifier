@@ -26,7 +26,7 @@ This repository contains the following components:
     python classification_blackbox.py
     ```
 
-2. **RSelf-interpretable Classifier Trainings**:
+2. **Self-interpretable Classifier Trainings**:
    - Execute the following command to run the self-interpretable encoder-decoder network:
 
     ```sh
@@ -41,7 +41,7 @@ This repository contains the following components:
     jupyter notebook
     ```
 
-2. **<span style="font-family: Arial, sans-serif;">Open `test-relu-skip.ipynb`</span>**:
+2. **<span style="font-family: Arial, sans-serif;">Open `test.ipynb`</span>**:
    - Navigate to the `test.ipynb` file in the Jupyter Notebook interface and open it.
    - Run the cells sequentially to see the neural network training and evaluation process.
 
