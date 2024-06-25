@@ -12,8 +12,8 @@ This approach involves utilizing a self-interpretable encoder-decoder model in c
 
 This repository contains the following components:
 
-1. **Train the CNN Classifier** (`classification_relu.py`): Handles a classification task using a neural network with ReLU activations.
-2. **Train the Interpretable Classifier** (`estimation_relu_skip.py`): Handles the estimation task using a neural network with ReLU activations and skip connections.
+1. **Train the CNN Classifier** (`classification_relu.py`)
+2. **Train the Interpretable Classifier** (`estimation_relu_skip.py`)
 3. **Test the Performance and Visualization**: Jupyter Notebook (`test-relu-skip.ipynb`): Provides a test bed for evaluating and visualizing.
 
 
