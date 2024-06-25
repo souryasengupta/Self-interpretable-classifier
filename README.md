@@ -12,9 +12,9 @@ This approach involves utilizing a self-interpretable encoder-decoder model in c
 
 This repository contains the following components:
 
-1. **Train the CNN Classifier** (`classification_relu.py`)
-2. **Train the Interpretable Classifier** (`estimation_relu_skip.py`)
-3. **Test the Performance and Visualization**: Jupyter Notebook (`test-relu-skip.ipynb`): Provides a test bed for evaluating and visualizing.
+1. **Train the Black-box CNN Classifier** (`classification_blackbox.py`)
+2. **Train the Self-interpretable Classifier** (`self-interpretable.py`)
+3. **Test the Performance and Visualization**: Jupyter Notebook (`test.ipynb`): Provides a test bed for evaluating and visualizing.
 
 
 ### Running the Python Scripts
@@ -23,14 +23,14 @@ This repository contains the following components:
    - Execute the following command to run the black-box classifier training script:
 
     ```sh
-    python classification_relu.py
+    python classification_blackbox.py
     ```
 
 2. **RSelf-interpretable Classifier Trainings**:
    - Execute the following command to run the self-interpretable encoder-decoder network:
 
     ```sh
-    python estimation_relu_skip.py
+    python self-interpretable.py
     ```
     
 ### Running the Jupyter Notebook
@@ -42,7 +42,7 @@ This repository contains the following components:
     ```
 
 2. **<span style="font-family: Arial, sans-serif;">Open `test-relu-skip.ipynb`</span>**:
-   - Navigate to the `test-relu-skip.ipynb` file in the Jupyter Notebook interface and open it.
+   - Navigate to the `test.ipynb` file in the Jupyter Notebook interface and open it.
    - Run the cells sequentially to see the neural network training and evaluation process.
 
 
