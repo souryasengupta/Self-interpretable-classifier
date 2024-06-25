@@ -16,6 +16,9 @@ This repository contains the following components:
 2. **Train the Self-interpretable Classifier** (`self-interpretable.py`)
 3. **Test the Performance and Visualization**: Jupyter Notebook (`test.ipynb`): Provides a test bed for evaluating and visualizing.
 
+### Data Storage
+
+The data should be stored in numpy files (channel_last). The class 1 and 0 are of training: `sp_train.npy` and `sa_train.npy`. The class 1 and 0 are of validation: `sp_val.npy` and `sa_val.npy`.
 
 ### Running the Python Scripts
 
