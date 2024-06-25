@@ -1,4 +1,8 @@
-import os
+
+import os 
+os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
+os.environ["CUDA_VISIBLE_DEVICES"] = "7"
+
 import argparse
 import numpy as np
 from tqdm import tqdm
@@ -13,39 +17,54 @@ from keras.callbacks import ModelCheckpoint, EarlyStopping, CSVLogger
 parser = argparse.ArgumentParser()
 parser.add_argument("--n", type=int, default=1,
                     help="Number of convolutional layers")
+parser.add_argument("--data_path", type=str, default="/path/to/your/data_directory",
+                    help="Path to the directory containing training and validation data")
+parser.add_argument("--best_blackbox_ckpt", type=str, default="/path/to/your/data_directory",
+                    help="Path to the best checkpoint file")
 args = parser.parse_args()
 n1 = args.n
+data_path = args.data_path
+best_blackbox_ckpt = args.best_blackbox_ckpt
+
 
 # Load data (replace with appropriate path or method) sp_* = class 1; sa_* = class 0;
 
-sp_train = np.load('path_to_sp_train.npy')
-sa_train = np.load('path_to_sa_train.npy')
-data_train = np.concatenate([sp_train, sa_train])
-sp_lab_train = np.ones(len(sp_train))
-sa_lab_train = np.zeros(len(sa_train))
-labels_train = np.concatenate([sp_lab_train, sa_lab_train])
-np.random.seed(101)
-np.random.shuffle(data_train)
-np.random.seed(101)
-np.random.shuffle(labels_train)
-data_train = data_train[data_train]
-labels_train = labels_train[labels_train]
+sp_train_path = os.path.join(args.data_path, 'sp_train.npy')
+sa_train_path = os.path.join(args.data_path, 'sa_train.npy')
+sp_val_path = os.path.join(args.data_path, 'sp_val.npy')
+sa_val_path = os.path.join(args.data_path, 'sa_val.npy')
 
-sp_val = np.load('path_to_sp_val.npy')
-sa_val = np.load('path_to_sa_val.npy')
-data_val = np.concatenate([sp_val, sa_val])
-sp_lab_val = np.ones(len(sp_val))
-sa_lab_val = np.zeros(len(sa_val))
-labels_val = np.concatenate([sp_lab_val, sa_lab_val])
+
+sp = np.load(sp_train_path)
+sa = np.load(sa_train_path)
+data = np.concatenate([sp, sa])
+sp_lab = np.ones(len(sp))
+sa_lab = np.zeros(len(sa))
+labels = np.concatenate([sp_lab,sa_lab])
+arr = np.arange(len(data))
 np.random.seed(101)
-np.random.shuffle(data_val)
+np.random.shuffle(arr)
+data_r = data[arr]
+labels_r = labels[arr]
+
+sp = np.load(sp_val_path)
+sa = np.load(sa_val_path)
+data = np.concatenate([sp, sa])
+sp_lab = np.ones(len(sp))
+sa_lab = np.zeros(len(sa))
+labels = np.concatenate([sp_lab,sa_lab])
+arr = np.arange(len(data))
 np.random.seed(101)
-np.random.shuffle(labels_val)
-data_val = data_val[data_val]
-labels_val = labels_val[labels_val]
+np.random.shuffle(arr)
+data_valid = data[arr]
+labels_valid = labels[arr]
+
+im_size = sp.shape[1]
+data_r = np.reshape(data_r, [-1, im_size, im_size, 1])
+data_valid = np.reshape(data_valid, [-1, im_size, im_size, 1])
 
 # Black-box Model definition
-im_size = 128
+
 input_size = (im_size, im_size, 1)
 n = int(n1)
 inputs = Input(input_size)
@@ -65,12 +84,11 @@ model.compile(optimizer=Adam(lr=3e-5, beta_1=0.9, beta_2=0.999, epsilon=1e-07),
               metrics=['accuracy'])
 
 # Callbacks and logging
-ckpt_path = '/path_to_save_checkpoints/'
-est_ckpt = os.path.join(ckpt_path, 'model_{epoch:02d}_{val_loss:.2f}.hdf5')
+ckpt_path = best_blackbox_ckpt 
 best_ckpt = os.path.join(ckpt_path, 'best_model.hdf5')
 csv_log = os.path.join(ckpt_path, 'training.log')
 
-checkpoint = ModelCheckpoint(filepath=est_ckpt,
+checkpoint = ModelCheckpoint(filepath=best_ckpt,
                              monitor='val_loss',
                              save_weights_only=True,
                              save_best_only=False,
@@ -91,8 +109,8 @@ early_stop = EarlyStopping(monitor='val_loss',
 callbacks = [checkpoint, best_checkpoint, early_stop, csv_logger]
 
 # Model training
-model.fit(data_train, labels_train,
-          validation_data=(data_val, labels_val),
+model.fit(data_r, labels_r,
+          validation_data=(data_valid, labels_valid),
           callbacks=callbacks,
           epochs=50,
           batch_size=8)
