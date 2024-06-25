@@ -19,14 +19,14 @@ This repository contains the following components:
 
 ### Running the Python Scripts
 
-1. **Classification Task**:
+1. **Black-box Classifier Training**:
    - Execute the following command to run the black-box classifier training script:
 
     ```sh
     python classification_relu.py
     ```
 
-2. **Regression Task with Skip Connections**:
+2. **RSelf-interpretable Classifier Trainings**:
    - Execute the following command to run the self-interpretable encoder-decoder network:
 
     ```sh
