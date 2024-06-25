@@ -20,14 +20,14 @@ This repository contains the following components:
 ### Running the Python Scripts
 
 1. **Classification Task**:
-   - Execute the following command to run the classification neural network script:
+   - Execute the following command to run the black-box classifier training script:
 
     ```sh
     python classification_relu.py
     ```
 
 2. **Regression Task with Skip Connections**:
-   - Execute the following command to run the regression neural network with skip connections script:
+   - Execute the following command to run the self-interpretable encoder-decoder network:
 
     ```sh
     python estimation_relu_skip.py
