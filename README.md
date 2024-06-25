@@ -23,7 +23,8 @@ This repository contains the following components:
    - Execute the following command to run the black-box classifier training script:
 
     ```sh
-    python classification_blackbox.py
+    python classification_blackbox.py --n 4 --data_path /path/to/your/data_directory --best_blackbox_ckpt /path/to/your/best_checkpoint_file
+
     ```
 
 2. **Self-interpretable Classifier Trainings**:
