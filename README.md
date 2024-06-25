@@ -48,7 +48,7 @@ The data should be stored in numpy files (channel_last). The class 1 and 0 are o
 
 2. **<span style="font-family: Arial, sans-serif;">Open `test.ipynb`</span>**:
    - Navigate to the `test.ipynb` file in the Jupyter Notebook interface and open it.
-   - Run the cells sequentially to see the neural network training and evaluation process.
+   - Run the cells sequentially to see the self-interpretable classifier's performance and the equivalency map (E-map).
 
 
 ## Important Libraries
