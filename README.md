@@ -30,7 +30,8 @@ This repository contains the following components:
    - Execute the following command to run the self-interpretable encoder-decoder network:
 
     ```sh
-    python self-interpretable.py
+    python estimation_relu.py --total 4 --randomrestart 1 --data_path /path/to/your/data_directory --best_ckpt /path/to/your/best_checkpoint_file.hdf5 --est_ckpt /path/to/save/checkpoint_files
+
     ```
     
 ### Running the Jupyter Notebook
