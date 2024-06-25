@@ -33,6 +33,19 @@ This repository contains the following components:
     python estimation_relu_skip.py
     ```
     
+### Running the Jupyter Notebook
+
+1. **<span style="font-family: Arial, sans-serif;">Start Jupyter Notebook</span>**:
+
+    ```sh
+    jupyter notebook
+    ```
+
+2. **<span style="font-family: Arial, sans-serif;">Open `test-relu-skip.ipynb`</span>**:
+   - Navigate to the `test-relu-skip.ipynb` file in the Jupyter Notebook interface and open it.
+   - Run the cells sequentially to see the neural network training and evaluation process.
+
+
 ## Important Libraries
 
 - `keras==2.2.4`
